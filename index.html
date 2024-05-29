@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,9 +75,29 @@
             object-fit: cover;
             margin-bottom: 20px;
         }
+        .language-switch {
+            float: right;
+            padding: 20px;
+        }
+        .hebrew {
+            direction: rtl;
+            text-align: right;
+        }
     </style>
+    <script>
+        function switchLanguage(language) {
+            var elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(function(element) {
+                if (element.getAttribute('data-lang') === language) {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </head>
-<body>
+<body onload="switchLanguage('en')">
     <header>
         <div class="container">
             <div id="branding">
@@ -93,58 +113,85 @@
                     <li><a href="#languages">Languages</a></li>
                 </ul>
             </nav>
+            <div class="language-switch">
+                <button onclick="switchLanguage('en')">English</button>
+                <button onclick="switchLanguage('he')">עברית</button>
+            </div>
         </div>
     </header>
 
     <section class="showcase">
         <div class="container">
-            <h1>Welcome to My Personal Webpage</h1>
-            <p>Detail-oriented Junior SOC Analyst with experience in monitoring and analyzing security events, investigating incidents, and implementing security measures.</p>
+            <h1 data-lang="en">Welcome to My Personal Webpage</h1>
+            <h1 data-lang="he" style="display:none;">ברוכים הבאים לאתר האישי שלי</h1>
+            <p data-lang="en">Detail-oriented Junior SOC Analyst with experience in monitoring and analyzing security events, investigating incidents, and implementing security measures.</p>
+            <p data-lang="he" style="display:none;">אנליסט SOC זוטר עם ניסיון במעקב וניתוח אירועי אבטחה, חקירת תקריות ויישום אמצעי אבטחה.</p>
         </div>
     </section>
 
     <div class="container">
         <img src="IMG_0828.jpeg" alt="Omri Peretz" class="profile">
         <section id="contact-info" class="contact-info">
-            <h2>Contact Info</h2>
-            <p><strong>Phone:</strong> 054-3032724</p>
-            <p><strong>Email:</strong> omrip06@gmail.com</p>
-            <p><strong>Address:</strong> Dizingof, Tel Aviv 292</p>
+            <h2 data-lang="en">Contact Info</h2>
+            <h2 data-lang="he" style="display:none;">פרטי התקשרות</h2>
+            <p data-lang="en"><strong>Phone:</strong> 054-3032724</p>
+            <p data-lang="he" style="display:none;"><strong>טלפון:</strong> 054-3032724</p>
+            <p data-lang="en"><strong>Email:</strong> omrip06@gmail.com</p>
+            <p data-lang="he" style="display:none;"><strong>אימייל:</strong> omrip06@gmail.com</p>
+            <p data-lang="en"><strong>Address:</strong> Dizingof, Tel Aviv 292</p>
+            <p data-lang="he" style="display:none;"><strong>כתובת:</strong> דיזינגוף, תל אביב 292</p>
         </section>
 
         <section id="objective" class="objective">
-            <h2>Objective</h2>
-            <p>Detail-oriented Junior SOC Analyst with experience in monitoring and analyzing security events, investigating incidents, and implementing security measures. Proficient in threat detection response procedures and collaborating with cross-functional teams.</p>
+            <h2 data-lang="en">Objective</h2>
+            <h2 data-lang="he" style="display:none;">מטרה</h2>
+            <p data-lang="en">Detail-oriented Junior SOC Analyst with experience in monitoring and analyzing security events, investigating incidents, and implementing security measures. Proficient in threat detection response procedures and collaborating with cross-functional teams.</p>
+            <p data-lang="he" style="display:none;">אנליסט SOC זוטר עם ניסיון במעקב וניתוח אירועי אבטחה, חקירת תקריות ויישום אמצעי אבטחה. בקיא בהליכי תגובה לזיהוי איומים ובשיתוף פעולה עם צוותים בין-תחומיים.</p>
         </section>
 
         <section id="skills" class="skills">
-            <h2>My Skills</h2>
+            <h2 data-lang="en">My Skills</h2>
+            <h2 data-lang="he" style="display:none;">המיומנויות שלי</h2>
             <ul>
-                <li>Proficient in WireShark, Nmap, Burp Suite, SQL, and SQL injection understanding of the OSI model</li>
-                <li>Knowledge of phishing tools and methods</li>
+                <li data-lang="en">Proficient in WireShark, Nmap, Burp Suite, SQL, and SQL injection understanding of the OSI model</li>
+                <li data-lang="he" style="display:none;">בקיא ב-WireShark, Nmap, Burp Suite, SQL, ו-SQL injection, הבנת מודל OSI</li>
+                <li data-lang="en">Knowledge of phishing tools and methods</li>
+                <li data-lang="he" style="display:none;">ידע בכלים ושיטות פישינג</li>
             </ul>
         </section>
 
         <section id="experience" class="experience">
-            <h2>Experience</h2>
-            <h3>Shift Manager</h3>
-            <p>Cafe Mayer, Tel Aviv | 2023-present</p>
-            <p>Managed a large branch with approximately 20 employees. Responsibilities included inventory management, handling malfunctions, workflow organization, and more.</p>
+            <h2 data-lang="en">Experience</h2>
+            <h2 data-lang="he" style="display:none;">ניסיון תעסוקתי</h2>
+            <h3 data-lang="en">Shift Manager</h3>
+            <h3 data-lang="he" style="display:none;">מנהל משמרת</h3>
+            <p data-lang="en">Cafe Mayer, Tel Aviv | 2023-present</p>
+            <p data-lang="he" style="display:none;">קפה מאיר, תל אביב | 2023-הווה</p>
+            <p data-lang="en">Managed a large branch with approximately 20 employees. Responsibilities included inventory management, handling malfunctions, workflow organization, and more.</p>
+            <p data-lang="he" style="display:none;">ניהול סניף גדול עם כ-20 עובדים. אחריות כללה ניהול מלאי, טיפול בתקלות, ארגון זרימת עבודה ועוד.</p>
 
-            <h3>Junior SOC Analyst</h3>
-            <p>Details not provided</p>
+            <h3 data-lang="en">Junior SOC Analyst</h3>
+            <h3 data-lang="he" style="display:none;">אנליסט SOC זוטר</h3>
+            <p data-lang="en">Details not provided</p>
+            <p data-lang="he" style="display:none;">פרטים לא נמסרו</p>
         </section>
 
         <section id="education" class="education">
-            <h2>Education</h2>
-            <h3>Offensive Security Expert</h3>
-            <p>Ecom College, Raoul Wallenberg St 22, Tel Aviv-Yafo | 2023-2023</p>
-            <p>Technical Knowledge: Operating Systems: Linux and Windows, McOS, IPS, IDS, Basic Python programming, WireShark, Nmap, Burp Suite, SQL and SQL injection, Understanding of the OSI model.</p>
+            <h2 data-lang="en">Education</h2>
+            <h2 data-lang="he" style="display:none;">השכלה</h2>
+            <h3 data-lang="en">Offensive Security Expert</h3>
+            <h3 data-lang="he" style="display:none;">מומחה אבטחה התקפית</h3>
+            <p data-lang="en">Ecom College, Raoul Wallenberg St 22, Tel Aviv-Yafo | 2023-2023</p>
+            <p data-lang="he" style="display:none;">מכללת Ecom, רחוב ראול ולנברג 22, תל אביב-יפו | 2023-2023</p>
+            <p data-lang="en">Technical Knowledge: Operating Systems: Linux and Windows, McOS, IPS, IDS, Basic Python programming, WireShark, Nmap, Burp Suite, SQL and SQL injection, Understanding of the OSI model.</p>
+            <p data-lang="he" style="display:none;">ידע טכני: מערכות הפעלה: לינוקס ו-ווינדוס, מקOS, IPS, IDS, תכנות פייתון בסיסי, WireShark, Nmap, Burp Suite, SQL ו-SQL injection, הבנת מודל OSI.</p>
         </section>
 
         <section id="languages" class="languages">
-            <h2>Languages</h2>
-            <p>Fluent in English, Hebrew, Russian</p>
+            <h2 data-lang="en">Languages</h2>
+            <h2 data-lang="he" style="display:none;">שפות</h2>
+            <p data-lang="en">Fluent in English, Hebrew, Russian</p>
+            <p data-lang="he" style="display:none;">שולט באנגלית, עברית, רוסית</p>
         </section>
     </div>
 
